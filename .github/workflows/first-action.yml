@@ -1,10 +1,8 @@
-name: First Workflow
-on: workflow_dispatch
+name: Hello World
+on: [push]
 jobs:
-  first-job:
-    runs-on: ubuntu-latest
+  Hello-World-Job:
+    runs-on:
+      - codebuild-shubham-${{ github.run_id }}-${{ github.run_attempt }}
     steps:
-      - name: Print greeting
-        run: echo "Hello World!"
-      - name: Print goodbye
-        run: echo "Done - bye!"
+      - run: echo "Hello World!"
